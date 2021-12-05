@@ -7,6 +7,7 @@
             - 5 different Job titles
     - Automatic Year of entry generation
     - Automatic Employee ID generation
+    - Generates Male and Female faces for each names
 
 ### CodeLab 02 - Methoden/Parameter/return
 
