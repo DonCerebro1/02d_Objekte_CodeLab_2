@@ -16,11 +16,5 @@ public class App {
 
 		
 		
-	}
-	private static void outPut(String outStr) {
-		System.out.println(outStr);
-	}
-	
-	
-	
+	}	
 }

@@ -6,7 +6,7 @@ public class Employee {
 
     public void getInfo(String flag){
         getName(flag); 
-        getEmployeeNo();
+        getEmployeeID();
         getCurrentPosition();
         getYearOfEntry();
         outPut("--------------------------\n");   
@@ -30,7 +30,7 @@ public class Employee {
         }
     }
    
-   private void getEmployeeNo(){
+   private void getEmployeeID(){
         Random rand = new Random();
         System.out.println("Mitarbeiter ID: " + rand.nextInt(10000));
     }
