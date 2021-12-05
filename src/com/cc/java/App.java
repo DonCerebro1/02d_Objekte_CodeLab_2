@@ -10,11 +10,11 @@ public class App {
 		Employee emplThree = new Employee();
 
 		empl.getInfo("#name");
-		emplTwo.getInfo("#name");
-		emplThree.getInfo("#name");
-		
+	    emplTwo.getInfo("#name");
+	    emplThree.getInfo("#name");
+	
+		 
 
-		
-		
+
 	}	
 }
