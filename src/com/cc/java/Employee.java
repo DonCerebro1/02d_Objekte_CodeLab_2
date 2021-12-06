@@ -6,6 +6,7 @@ import java.util.Random;
 public class Employee {
     String[] name = {"Lukas","Ben","Paul","Tim","David","Amelie","Nina","Fiona","Olivia","Alba"};
     String[] lastName = {"Müller","Schneider","Weber","Hofmann","Wagner","Bauer","Klein","Neumann","Schwarz","Zimmermann"};
+    String[] month = {"Januar","Feburar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"};
     
     //Generates the Employee with all informations
     public void getInfo(String flag){
@@ -13,8 +14,24 @@ public class Employee {
         getEmployeeID();
         getCurrentPosition();
         getYearOfEntry();
+        getBirthday();
         outPut("--------------------------\n");   
         // drawMeAcircle(3,5,2);   
+    }
+
+    //Generates Birthday-Date
+    private void getBirthday(){
+        Random rand = new Random();
+        int maxYear = 2003;
+        int minYear = 1950;
+        int range = maxYear - minYear;
+        int day = rand.nextInt(31) + 1;
+        int year = (int)(Math.random() * range) + minYear;
+
+        for(int i = 0; i < 1; i++){
+            i = rand.nextInt(12);
+            System.out.println("Geburtstag: " + day + "." + month[i] + " " + year );
+        }
     }
       
     //Generates firstname and lastname with an random number and loops those numbers
@@ -47,11 +64,18 @@ public class Employee {
     //Generates a Jobtitel with randomnumber
     private void getCurrentPosition(){
         String[] position = {"CEO","CTO","COO","Programmierer","Designer"};
+        String[] division = {"IT-Abteilung","Design-Abteilung","Geschäftsleitung"};
         Random rand = new Random();
 
         for(int i = 0; i < 1; i++){
             i = rand.nextInt(5);
-            System.out.println("Aktuelle Position: " + position[i]);
+                if(i == 0 || i == 1 || i == 2){
+                    System.out.println("Aktuelle Position: " + position[i] + "\n" + "Abteilung: " + division[2]);
+                }else if(i == 3){
+                    System.out.println("Aktuelle Position: " + position[i] + "\n" + "Abteilung: " + division[0]);
+                }else if(i == 4){
+                    System.out.println("Aktuelle Position: " + position[i] + "\n" + "Abteilung: " + division[1]);
+                }
         }
     }
 
@@ -90,23 +114,6 @@ public class Employee {
 		System.out.println(outStr);
 	}
 
-    /***********************************************************************************/
-    // not working properly. Supposed to be drawing a circel
-    private static void drawMeAcircle(int posX, int posY, int radius) {
-        for (int i = 0;i <= posX + radius; i++) {
-           for (int j = 1;j <=posY + radius; j++) {
-                int xSquared = (i - posX)*(i - posX);
-                int ySquared = (j - posY)*(j - posY);
-                if (Math.abs(xSquared + ySquared - radius * radius) < radius) {
-                    System.out.print("#");
-                } else {
-                    System.out.print(" ");
-                }
-            }
-            System.out.println();
-        }
-    }
-    /***********************************************************************************/
 }
 
 
